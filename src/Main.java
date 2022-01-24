@@ -51,7 +51,7 @@ class Main {
             }
 
             while (!wantToContinue.equals("y") && !wantToContinue.equals("n") && selection != 3) {
-                System.out.print("Bad decision. Try again.  Do you want to continue? (y/n): ");
+                System.out.print("Bad decision. Try again. Do you want to continue? (y/n): ");
                 wantToContinue = input.nextLine();
             }
 
