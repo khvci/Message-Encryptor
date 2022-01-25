@@ -8,6 +8,7 @@ class Main {
         String message;
         String wantToContinue = "";
         boolean endProgram = false;
+        int encryptionKey;
 
         while (!endProgram) {
             System.out.print(
@@ -23,9 +24,15 @@ class Main {
                     System.out.println("\nWrite your message: ");
                     message = input.nextLine();
 
+                    System.out.println("\nProvide a numeric password to decrypt this message later: ");
+                    encryptionKey = input.nextInt();
+
                     Encryption encryption = new Encryption();
-                    message = encryption.encrypt(message);
+                    message = encryption.encrypt(message, encryptionKey);
                     System.out.println("\nEncrypted Message: \n" + message);
+
+                    encryptionKey = 0;
+                    input.nextLine();
 
                     System.out.print("\nDo you want to continue? (y/n): ");
                     wantToContinue = input.nextLine();
@@ -34,9 +41,15 @@ class Main {
                     System.out.println("\nWrite your encrypted message: ");
                     message = input.nextLine();
 
+                    System.out.println("\nDecryption password: ");
+                    encryptionKey = input.nextInt();
+
                     Decryption decryption = new Decryption();
-                    message = decryption.decrypt(message);
+                    message = decryption.decrypt(message, encryptionKey);
                     System.out.println("\nDecrypted Message: \n" + message);
+
+                    encryptionKey = 0;
+                    input.nextLine();
 
                     System.out.print("\nDo you want to continue? (y/n): ");
                     wantToContinue = input.nextLine();
