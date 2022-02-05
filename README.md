@@ -10,3 +10,6 @@ Usage:
 
 Version 1.1 Update:
 - Password feature added. Now you encrypt your message with a password, which will be necessary to decrypt later.
+
+Version 1.1.2 Update:
+- A bug that results miscalculation is fixed.
